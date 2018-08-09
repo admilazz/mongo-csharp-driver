@@ -146,6 +146,7 @@ namespace MongoDB.Driver
                     case "normalization": normalization = value.ToBoolean(); break;
                     case "numericOrdering": numericOrdering = value.ToBoolean(); break;
                     case "strength": strength = ToCollationStrength(value.ToInt32()); break;
+                    case "version": break; // skip "version" fields, which we don't care about
                     default:
                         throw new ArgumentException($"Unrecognized element '{element.Name}' when constructing a Collation object from a BsonDocument.");
                 }

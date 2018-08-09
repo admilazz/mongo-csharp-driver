@@ -36,8 +36,10 @@ namespace MongoDB.Driver
         private readonly BsonValue _id;
         private readonly int _index;
 
-        // constructors
-        internal BulkWriteUpsert(
+        /// <summary>Constructs a new <see cref="BulkWriteUpsert"/> object</summary>
+        /// <param name="index">The index</param>
+        /// <param name="id">The id</param>
+        public BulkWriteUpsert(
             int index,
             BsonValue id)
         {
