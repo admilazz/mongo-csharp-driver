@@ -167,7 +167,7 @@ namespace MongoDB.Driver.Core.Operations
                         var bsonDocument = (BsonDocument)v;
                         using (var reader = new BsonDocumentReader(bsonDocument))
                         {
-                            var context = BsonDeserializationContext.CreateRoot(reader);
+                            var context = BsonDeserializationContext.CreateRoot(reader, b => b.AllowDuplicateElementNames = true);
                             var document = _serializer.Deserialize(context);
                             return document;
                         }
